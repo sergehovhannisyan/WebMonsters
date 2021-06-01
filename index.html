@@ -11,8 +11,18 @@
     <title>Web Monsters - Studio</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Css animation
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /> -->
+    <!-- Css animation -->
+    <script>
+      if (
+        /Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(
+          navigator.userAgent
+        ) === false
+      ) {
+        document.write(
+          '<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />'
+        );
+      }
+    </script>
     <!-- Font Awesome icons (free version)-->
     <script
       src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
@@ -140,7 +150,7 @@
         <div class="row">
           <div class="col-lg-4 col-sm-6 mb-4">
             <!-- Portfolio item 1-->
-            <div class="portfolio-item">
+            <div data-aos="fade-up" class="portfolio-item">
               <a
                 class="portfolio-link"
                 data-bs-toggle="modal"
@@ -167,7 +177,7 @@
           </div>
           <div class="col-lg-4 col-sm-6 mb-4">
             <!-- Portfolio item 2-->
-            <div class="portfolio-item">
+            <div data-aos="fade-up" class="portfolio-item">
               <a
                 class="portfolio-link"
                 data-bs-toggle="modal"
@@ -194,7 +204,7 @@
           </div>
           <div class="col-lg-4 col-sm-6 mb-4">
             <!-- Portfolio item 3-->
-            <div class="portfolio-item">
+            <div data-aos="fade-up" class="portfolio-item">
               <a
                 class="portfolio-link"
                 data-bs-toggle="modal"
@@ -221,7 +231,7 @@
           </div>
           <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
             <!-- Portfolio item 4-->
-            <div class="portfolio-item">
+            <div data-aos="fade-up" class="portfolio-item">
               <a
                 class="portfolio-link"
                 data-bs-toggle="modal"
@@ -248,7 +258,7 @@
           </div>
           <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
             <!-- Portfolio item 5-->
-            <div class="portfolio-item">
+            <div data-aos="fade-up" class="portfolio-item">
               <a
                 class="portfolio-link"
                 data-bs-toggle="modal"
@@ -275,7 +285,7 @@
           </div>
           <div class="col-lg-4 col-sm-6">
             <!-- Portfolio item 6-->
-            <div class="portfolio-item">
+            <div data-aos="fade-up" class="portfolio-item">
               <a
                 class="portfolio-link"
                 data-bs-toggle="modal"
@@ -1056,12 +1066,22 @@
     <!-- Core theme JS-->
     <script src="js/contact_me.js"></script>
     <script src="js/scripts.js"></script>
-    <!-- Animation lib -->
-    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
     ></script>
+    <!-- Animation lib -->
+    <script>
+      if (
+        /Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(
+          navigator.userAgent
+        ) === false
+      ) {
+        document.write(
+          '<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" ><\/script>'
+        );
+      }
+    </script>
     <!-- Initialization theme JS -->
     <script type="text/javascript">
       (function () {
@@ -1086,7 +1106,10 @@
             element.parentElement.href = 'https://www.linkedin.com/';
           });
 
-        // AOS.init(); animation
+        //animation initialization
+        if (AOS) {
+          AOS.init();
+        }
       })();
     </script>
   </body>
